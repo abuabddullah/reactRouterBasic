@@ -12,6 +12,8 @@ import Friends from "./components/Friends/Friends.jsx";
 import FriendDetails from "./components/Friends/FriendDetails.jsx";
 import Posts from "./components/Posts/Posts.jsx";
 import PostDetails from "./components/Posts/PostDetails.jsx";
+import Todos from "./components/Todos/Todos.jsx";
+import customTodoLoader from "./loaders/customTodoLoader.js";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +46,11 @@ const router = createBrowserRouter([
         element: <PostDetails />,
         loader: ({ params }) =>
         fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`),
+      },
+      {
+        path: "/todos",
+        element: <Todos />,
+        loader: customTodoLoader,
       },
       {
         path: "/about",
