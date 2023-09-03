@@ -1,0 +1,10 @@
+.bordered {
+  border: 2px solid rgb(255, 187, 0);
+  padding: 10px;
+  margin: 10px;
+}
+
+.dFlex {
+  display: flex;
+  justify-content: space-around;
+}

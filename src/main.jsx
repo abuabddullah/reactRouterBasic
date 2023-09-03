@@ -14,6 +14,7 @@ import Posts from "./components/Posts/Posts.jsx";
 import PostDetails from "./components/Posts/PostDetails.jsx";
 import Todos from "./components/Todos/Todos.jsx";
 import customTodoLoader from "./loaders/customTodoLoader.js";
+import GrandpaContext from "./components/learnContextApi/GrandpaContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
         path: "/todos",
         element: <Todos />,
         loader: customTodoLoader,
+      },
+      {
+        path: "/contextAPI",
+        element: <GrandpaContext />,
       },
       {
         path: "/about",
