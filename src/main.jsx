@@ -15,6 +15,7 @@ import PostDetails from "./components/Posts/PostDetails.jsx";
 import Todos from "./components/Todos/Todos.jsx";
 import customTodoLoader from "./loaders/customTodoLoader.js";
 import GrandpaContext from "./components/learnContextApi/GrandpaContext.jsx";
+import BestContext from "./components/learnContextApi/contextProviders/BestContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
         path: "/friendDetails/:id",
         element: <FriendDetails />,
         loader: ({ params }) =>
-        fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`),
+          fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`),
       },
       {
         path: "/posts",
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
         path: "/postDetails/:id",
         element: <PostDetails />,
         loader: ({ params }) =>
-        fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`),
+          fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`),
       },
       {
         path: "/todos",
@@ -75,6 +76,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <BestContext>
+      <RouterProvider router={router} />
+    </BestContext>
   </React.StrictMode>
 );

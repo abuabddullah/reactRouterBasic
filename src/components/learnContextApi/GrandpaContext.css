@@ -8,3 +8,7 @@
   display: flex;
   justify-content: space-around;
 }
+
+.bg-gold {
+  background-color: rgb(255, 187, 0);
+}
